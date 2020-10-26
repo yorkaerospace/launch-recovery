@@ -1,0 +1,17 @@
+1. Aris' Tell Rocket
+https://aris-space.ch/wp-content/uploads/2019/07/100_Project-Report.pdf 	Pages 13
+Main chute: IFC-96-S-OB Fruitychutes https://www.aeroexpo.online/prod/fruity-chutes-inc/product-185456-29199.html
+Drogue chute: CFC-24 Fruitychutes https://shop.fruitychutes.com/products/24-elliptical-parachute-2-2lb-20fps
+This is for a rocket with dry mass 21kg
+
+2. A guide on constructing a rocket parachute
+https://www.nakka-rocketry.net/paracon.html
+
+3. A more general guide on a recovery system
+https://www.nakka-rocketry.net/parasys.html
+
+4. An old guide, but may have good information re effective shapes
+http://servidor.demec.ufpr.br/CFD/bibliografia/aerodinamica/PARACHUTE%20Recovery%20Systems%20Desgin%20Manual.pdf
+
+5. Tender Descender
+http://servidor.demec.ufpr.br/CFD/bibliografia/aerodinamica/PARACHUTE%20Recovery%20Systems%20Desgin%20Manual.pdf
