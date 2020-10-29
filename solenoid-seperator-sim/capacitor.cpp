@@ -12,6 +12,7 @@ capacitor::capacitor(float start_voltage, float caps, solenoid * sole) {
 // updates the voltage of the capacitor bank, takes: time[s]
 void capacitor::updateVoltage(float time) {
 	calcVoltage(time);
+	getVoltage();
 }
 
 // calculates the new voltage after a time has passed, takes: time[s]
