@@ -1,34 +1,32 @@
 #ifndef SOLENOID_H
-#define COIL_H
-
-#include "coil.h"
+#define SOLENOID_H
 
 class solenoid
 {
 
 private:
 
-	float coil_resistance, total_resistance, radius, length, voltage;
-	int coil_count;
+	float ring_resistance, total_resistance, radius, length, voltage;
+	int ring_count;
 	float resistivity = 1.7E-8;
 	float wire_area = 1.26E-7;
 
-	// calculates the resistance of a single coil, and then calculates the total resistance of the circuit
+	// calculates the resistance of a single ring, and then calculates the total resistance of the circuit
 	void calcResistance(void);
 
-	// using the total resistance of the circuit and the supplied voltage, calculates the current through each coil
+	// using the total resistance of the circuit and the supplied voltage, calculates the current through each ring
 	void calcCurrent(void);
 
-	// sums the force on the test point from each coil, takes: the xpos of the test point
+	// sums the force on the test point from each ring, takes: the xpos of the test point
 	float totalForce(float);
+
+	// calculates the force on the test mass from a single ring in the solenoid, at a given xpos
+	float ringForce(float, float);
 
 public:
 
-	// constructor which creates a test coil, takes: the radius of each coil[m], the number of coils, the length of the solenoid[m], the supplied voltage[V]
+	// constructor which creates a test ring, takes: the radius of each ring[m], the number of rings, the length of the solenoid[m], the supplied voltage[V]
 	solenoid(float, float, float, float);
-
-	// destructor, which deletes the allocated memory for the coil
-	~solenoid();
 
 	// returns the total force on a point charge at a given x position[m]
 	float getTotalForce(float);
