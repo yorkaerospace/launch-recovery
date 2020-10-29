@@ -16,7 +16,7 @@ int main(int argc, char * argv[]) {
 	float test_mass = argv[6];
 	float test_com = argv[7];
 	float timestep = argv[8];
-	int total_time = argv[9];
+	float total_time = argv[9];
 
 	solenoid * sim_solenoid = new solenoid(solenoid_radii, ring_number, solenoid_length, capacitor_voltage);
 	capacitor * sim_capacitor = new capacitor(capactitor_voltage, capacitor_capacitance, sim_solenoid);
@@ -29,8 +29,14 @@ int main(int argc, char * argv[]) {
 	return 0;
 }
 
-void updateSystem(sim_solenoid, sim_capacitor, sim_ejectionObject) {
-	// fill me!
+void updateSystem(sim_solenoid, sim_capacitor, sim_ejectionObject, timestep, total_time) {
+	float force, resistance, xpos;
+	for (float time = 0; time < total_time; time+= timestep) {
+		xpos = sim_ejectionObject.getPos();
+		force = sim_solenoid.getTotalForce(xpos);
+		sim_ejectionObject.setPos(force, timestep);
+		sim_capacitor.updateVoltage(time);
+	}
 }
 
 void cleanUp(sim_solenoid, sim_capacitor, sim_ejectionObject) {
