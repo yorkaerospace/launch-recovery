@@ -12,10 +12,6 @@ private:
 	// calculates the new position of the object due to an applied force, takes: force[N], timestep[s]
 	void calcPos(float, float);
 
-	// updates the sim with the objects new position
-	float getPos(void);
-
-
 public:
 
 	// constructor, takes: object mass[kg], object COM[m] relative to end of solenoid
@@ -24,6 +20,8 @@ public:
 	// updates the xpos due to applied force, takes: force[N], timestep[s]
 	void setPos(float, float);
 
+	// updates the sim with the objects new position
+	float getPos(void);
 };
 
 #endif
