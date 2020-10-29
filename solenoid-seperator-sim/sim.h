@@ -14,14 +14,7 @@
  * all lengths are relative to the end of the solenoid
  */
 
-// this will initialise a solenoid, which includes all the associated rings, takes: solenoid radius[m], number of rings, solenoid length[m]
-solenoid * initSolenoid(float, int, float);
-
-// this will initialise a capacitor bank, takes: initial capacitor voltage[V], capacitor capacitance[F]
-capacitor * initCapacitors(float, float);
-
-// this will initialise a test object, takes: object mass[kg], object COM[m]
-ejectionObject * initEjectionObject(float, float);
+// the main function will also initialise the objects, as an init function for each object was a waste of time
 
 // this will update each object every timestep, for the duration of the simulation
 void updateSystem(solenoid *, capactitor *, ejectionObject *, float, int);

@@ -9,7 +9,7 @@ int main(int argc, char * argv[]) {
 	}
 
 	float solenoid_radii = argv[1];
-	int coil_number = argv[2];
+	int ring_number = argv[2];
 	float solenoid_length = argv[3];
 	float capactitor_voltage = argv[4];
 	float capacitor_capacitance = argv[5];
@@ -18,9 +18,9 @@ int main(int argc, char * argv[]) {
 	float timestep = argv[8];
 	int total_time = argv[9];
 
-	solenoid * sim_solenoid = initSolenoid(solenoid_radii, coil_number, solenoid_length);
-	capacitor * sim_capactitor = initCapacitor(capactitor_voltage, capacitor_capacitance);
-	ejectionObject * sim_ejectionObject = initEjectionObject(test_mass, test_com);
+	solenoid * sim_solenoid = new solenoid(solenoid_radii, ring_number, solenoid_length, capacitor_voltage);
+	capacitor * sim_capacitor = new capacitor(capactitor_voltage, capacitor_capacitance, sim_solenoid);
+	ejectionObject * sim_ejectionObject ejectionObject(test_mass, test_com);
 
 	updateSystem(sim_solenoid, sim_capacitor, sim_ejectionObject, timestep, total_time);
 
@@ -29,6 +29,12 @@ int main(int argc, char * argv[]) {
 	return 0;
 }
 
-solenoid * initSolenoid(float radii, coil_number, length) {
-	
+void updateSystem(sim_solenoid, sim_capacitor, sim_ejectionObject) {
+	// fill me!
+}
+
+void cleanUp(sim_solenoid, sim_capacitor, sim_ejectionObject) {
+	delete sim_solenoid;
+	delete sim_capacitor;
+	delete sim_ejectionObject;
 }
