@@ -1,12 +1,14 @@
 #ifndef SOLENOID_H
 #define SOLENOID_H
 
+#include <cmath>
+
 class solenoid
 {
 
 private:
 
-	float ring_resistance, total_resistance, radius, length, voltage;
+	float ring_resistance, total_resistance, radius, length, voltage, current;
 	int ring_count;
 	float resistivity = 1.7E-8;
 	float wire_area = 1.26E-7;

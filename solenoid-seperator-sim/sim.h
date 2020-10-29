@@ -17,9 +17,9 @@
 // the main function will also initialise the objects, as an init function for each object was a waste of time
 
 // this will update each object every timestep, for the duration of the simulation
-void updateSystem(solenoid *, capactitor *, ejectionObject *, float, float);
+void updateSystem(solenoid *, capacitor *, ejectionObject *, float, float);
 
 // this will delete each object from dynamic memory
-void cleanUp(solenoid *, capactitor *, ejectionObject *);
+void cleanUp(solenoid *, capacitor *, ejectionObject *);
 
 #endif

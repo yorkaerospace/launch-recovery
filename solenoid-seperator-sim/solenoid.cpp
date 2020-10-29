@@ -13,7 +13,7 @@ solenoid::solenoid(float set_radius, float set_ring_count, float set_length, flo
 
 // returns the total force on a point charge at a given x position[m]
 float solenoid::getTotalForce(float test_xpos) {
-	return totalForce(float test_xpos);
+	return totalForce(test_xpos);
 }
 
 // sets the new voltage through the solenoid as the capacitor discharges, takes: voltage supplied[V]

@@ -5,7 +5,7 @@
 capacitor::capacitor(float start_voltage, float caps, solenoid * sole) {
 	init_voltage = start_voltage;
 	capacitance = caps;
-	resistance = sole.getResistance();
+	resistance = sole->getResistance();
 	solenoid_ptr = sole;
 }
 
@@ -24,5 +24,5 @@ void capacitor::calcVoltage(float time) {
 
 // passes the updated voltage to the solenoid
 void capacitor::getVoltage() {
-	solenoid_ptr.setVoltage(current_voltage);
+	solenoid_ptr->setVoltage(current_voltage);
 }
