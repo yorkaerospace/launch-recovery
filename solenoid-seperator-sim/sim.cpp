@@ -2,7 +2,7 @@
 
 int main(int argc, char * argv[]) {
 
-	int num_args = 8;
+	int num_args = 9;
 	if (argc != num_args + 1) {
 		std::cout << "Error: Invalid number of simulation arguments. Exiting." << std::endl;
 		return 1;
@@ -20,9 +20,9 @@ int main(int argc, char * argv[]) {
 
 	std::cout << "Variables set, creating objects..." << std::endl;
 
-	solenoid * sim_solenoid = new solenoid(solenoid_radii, ring_number, solenoid_length, capacitor_voltage);
-	capacitor * sim_capacitor = new capacitor(capacitor_voltage, capacitor_capacitance, sim_solenoid);
-	ejectionObject * sim_ejectionObject = new ejectionObject(test_mass, test_com);
+	solenoid *sim_solenoid = new solenoid(solenoid_radii, ring_number, solenoid_length, capacitor_voltage);
+	capacitor *sim_capacitor = new capacitor(capacitor_voltage, capacitor_capacitance, sim_solenoid);
+	ejectionObject *sim_ejectionObject = new ejectionObject(test_mass, test_com);
 
 	std::cout << "Objects created, running simulation..." << std::endl;
 
@@ -38,9 +38,8 @@ int main(int argc, char * argv[]) {
 }
 
 void updateSystem(solenoid * sim_solenoid, capacitor * sim_capacitor, ejectionObject * sim_ejectionObject, float timestep, float total_time) {
-	std::cout << "Hello!" << std::endl;
 	float force, xpos;
-	for (float time = 0; time < total_time; time+= timestep) {
+	for (float time = 0; time < total_time; time += timestep) {
 		xpos = sim_ejectionObject->getPos();
 		force = sim_solenoid->getTotalForce(xpos);
 		sim_ejectionObject->setPos(force, timestep);
