@@ -1,13 +1,25 @@
-EXECUTABLE:simulation.exe 
+CC = g++
+CFLAGS = -Wall -g
+SIMTARGET = sim.exe
+TESTTARGET = test.exe
 
-CC:"c:\MinGW\bin\g++.exe"
+SRC = solenoid.cpp capacitor.cpp ejectionObject.cpp
+SIM = sim.cpp
+TEST = test.cpp
 
-src = $(wildcard *.cpp)
-obj = $(src:.cpp=.o)
+#$(TARGET): $(SRC)
+#	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
 
-all: myprog
+sim: $(SRC) $(SIM)
+	$(CC) $(SRC) $(SIM) $(CFLAGS) -o $(SIMTARGET) 
 
-myprog: $(obj) $(CC) -o $(EXECUTABLE) $^
+test: $(SRC) $(TEST)
+	$(CC) $(SRC) $(TEST) $(CFLAGS) -o $(TESTTARGET) 
 
 .PHONY: clean
-clean: del $(obj) $(EXECUTABLE)
+
+clean:
+	del *.o $(SIMTARGET) $(TESTTARGET)
+
+
+
